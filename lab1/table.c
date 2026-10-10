@@ -20,7 +20,7 @@ char* print_table(FILE *file, stack_t *formula, int *symbols_cnt, char *symbols)
   rewind(file);
   if (*symbols_cnt == 0) {
     printf("The result of formula is always %c\n", compute_formula(formula, 0, symbols_t));
-    char *result = malloc(2);
+    char *result = (char *)malloc(2);
     result[0] = '1';
     result[1] = '\0';
     return result;
