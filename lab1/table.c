@@ -35,7 +35,7 @@ char* print_table(FILE *file, stack_t *formula, int *symbols_cnt, char *symbols)
   // Print the table itself
   // Bit magic for getting some bit from our string (000, 001, 010, ...,
   // 1 << symbols_cnt - 1 (amount of possible prompts to our formula is 2**symbols_cnt))
-  char *table_of_truth = malloc((1 << *symbols_cnt) + 1);
+  char *table_of_truth = (char *)malloc((1 << *symbols_cnt) + 1);
   for (int i = 0; i < (1 << *symbols_cnt); ++i) {
     for (int j = 1; j <= *symbols_cnt; ++j) {
       printf(" %d |", (i >> (*symbols_cnt - j)) & 1);
