@@ -4,7 +4,7 @@
 
 void stack_push(stack_t **stack, char *value) {
   stack_t *ptr;
-  ptr = malloc(sizeof(stack_t));
+  ptr = (stack_t *)malloc(sizeof(stack_t));
   if (ptr != NULL) {
     ptr->value = strdup(value);
     ptr->next = *stack;

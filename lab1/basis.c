@@ -25,7 +25,7 @@ char* format_string(const char *template, const char *A, const char *B) {
     }
   }
 
-  char *result = malloc(total_len + 1);
+  char *result = (char *)malloc(total_len + 1);
   if (!result) {
     return NULL;
   }
@@ -214,4 +214,3 @@ void basis_change(stack_t *formula, int basis) {
   printf("%s\n", result);
   free(result);
 }
-
